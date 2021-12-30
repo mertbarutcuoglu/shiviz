@@ -11,7 +11,7 @@
     <!--<script src="local_scripts/d3.min.js"></script>-->
     <script src="local_scripts/d3.v4.min.js"></script>
     <script src="local_scripts/jquery-3.2.1.min.js"></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css" rel="stylesheet"/>
     <style type="text/css">
         #vizContainer svg line.hidden-link {
             stroke-width: 1px;
@@ -38,6 +38,7 @@
             </h2>
 
             <button class="try">Try out ShiViz</button>
+            <button class="demo">Learn How to Use ShiViz</button>
 
             <h3>What am I looking at?</h3>
             <p>
@@ -346,7 +347,7 @@
             <ul class="leftTabLinks">
                <li class="default"><a href="logTab">Log lines</a></li>
                <li><a href="motifsTab">Motifs</a></li>
-               <li><a href="clusterTab">Clusters</a></li>
+               <li><a id="clusters" href="clusterTab">Clusters</a></li>
             </ul>
             <div id="leftTabContent">
                 <div id="logTab">
@@ -358,9 +359,9 @@
                     <div id="clusterOption">
                         <p>Cluster executions by:</p>
                         <input id="clusterNumProcess" type="checkbox">
-                        <label>number of processes</label><br>
+                        <label id="clusterNumProcessLabel">number of processes</label><br>
                         <input id="clusterComparison" type="checkbox">
-                        <label>execution comparison</label>
+                        <label id="clusterComparisonLabel">execution comparison</label>
                     </div>
                     <table class="clusterResults">
                         <tr>
@@ -500,11 +501,13 @@
         </defs>
     </svg>
     
-
     <!-- REPLACED DURING DEPLOYMENT: -->
     <script type="text/javascript" src="js/dev.js"></script>
     <!-- -->
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js"></script>
+
+    <script type="text/javascript" src="js/tutorials.js"></script>
     <script type="text/javascript" src="js/searchBar.js"></script>
     <script type="text/javascript" src="js/clusterer.js"></script>
 
